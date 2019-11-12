@@ -61,20 +61,20 @@ export default class GithubCLI {
     if (packageExists) {
       console.log(`Updating package.json fields for ${repoName}.`)
       await PropsEditor.replacePackageContent(packageFilePath, updatesObject)
-    }
 
-    if ((updatesObject.dependencies && Object.keys(updatesObject.dependencies).length > 0)
-      || (updatesObject.devDependencies && Object.keys(updatesObject.devDependencies).length > 0))
-    {
-      console.log('Dependencies have been modified, running npm install to update lock file.')
-      await this.execute('npm install', { cwd: repoDir })
-    }
+      if ((updatesObject.dependencies && Object.keys(updatesObject.dependencies).length > 0)
+        || (updatesObject.devDependencies && Object.keys(updatesObject.devDependencies).length > 0))
+      {
+        console.log('Dependencies have been modified, running npm install to update lock file.')
+        await this.execute('npm install', { cwd: repoDir })
+      }
 
-    await this.execute(`git checkout -b ${branchName}`, { cwd: repoDir })
-    await this.execute('git add .', { cwd: repoDir })
-    await this.execute(`git commit -m '${commitMessage}'`, { cwd: repoDir })
-    await this.execute(`git push --set-upstream origin ${branchName}`, { cwd: repoDir })
-    await this.execute(`hub pull-request -m '${commitMessage}'`, { cwd: repoDir })
+      await this.execute(`git checkout -b ${branchName}`, { cwd: repoDir })
+      await this.execute('git add .', { cwd: repoDir })
+      await this.execute(`git commit -m '${commitMessage}'`, { cwd: repoDir })
+      await this.execute(`git push --set-upstream origin ${branchName}`, { cwd: repoDir })
+      await this.execute(`hub pull-request -m '${commitMessage}'`, { cwd: repoDir })
+    }
 
     console.log('\n')
   }

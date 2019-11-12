@@ -1,5 +1,23 @@
 {
   "plugins": [
-    "ucv-ext-azure"
+    "ucv-ext-azure",
+    "ucv-ext-rally",
+    "ucv-ext-junit",
+    "ucv-ext-coverage-core",
+    "ucv-ext-twistlock",
+    "ucv-ext-testng",
+    "ucv-ext-onetest",
+    "ucv-ext-vs-quality",
+    "ucv-ext-jmeter",
+    "ucv-ext-bamboo",
+    "ucv-ext-appscan",
+    "ucv-ext-sonarqube",
+    "ucv-ext-bitbucket-server",
+    "ucv-ext-github",
+    "ucv-ext-jira",
+    "ucv-ext-servicenow",
+    "ucv-ext-gitlab",
+    "ucv-ext-rtc",
+    "ucv-ext-asoc"
   ]
 }
