@@ -1,6 +1,10 @@
 # velocity-plugin-package-updater
 This command-line utility can be used to make mass updates to the `package.json` file of multiple plugins at once. It makes the updates to all plugin projects listed in the `plugins.json` file based on the `updates.json` file. Both files are located in the root directory of the project.
 
+## prerequisites
+1. You'll need to install the `hub` command-line tool. You can follow the documentation at https://hub.github.com/ for help.
+2. You will also need to create a personal access token and set it as the `GITHUB_TOKEN` environment variable. Check out the following documentation for help doing that: https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
+
 ## plugins.json
 You may update the plugins.json file to add or remove plugins to update. The entries are based on the repository name. For instance:
 ```
