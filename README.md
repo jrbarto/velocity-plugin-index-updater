@@ -3,6 +3,7 @@ This command-line utility can be used to make mass updates to the `package.json`
 
 ## prerequisites
 1. You'll need to install the `hub` command-line tool. You can follow the documentation at https://hub.github.com/ for help.
+2. After `hub` is installed you'll need to configure the GitHub Enterprise server so that hub will recognize it as a remote repository. By default, hub will only work with repositories that have remotes which point to github.com. GitHub Enterprise hosts (such as our HCL PNP server) need to be whitelisted by running the following command: `git config --global --add hub.host github01.hclpnp.com`.
 2. You will also need to create a personal access token and set it as the `GITHUB_TOKEN` environment variable. Check out the following documentation for help doing that: https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
 
 ## plugins.json
